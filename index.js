@@ -1,5 +1,7 @@
 /*🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️ Task 1: Warm-up! 🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️*/
 
+const { numberLiteralTypeAnnotation } = require("@babel/types");
+
 /*MAKE SURE TO RETURN ALL OF THE ANSWERS INSIDE OF A FUNCTION (tasks 1d through task 7), IF YOU DON'T, THE AUTOGRADER WILL NOT WORK*/
 
 // task 1a, 1b, and 1c are not autograded
@@ -19,8 +21,10 @@ Do the following:
 
    HINT: no function required
 */
-
-
+let votingAge = 18;
+if (votingAge >=18) {
+  console.log(true);
+}
 
 /*
 Task 1b - Values
@@ -33,7 +37,12 @@ Do the following:
    HINT: no function required
 */
 
-
+let var1 = 10;
+let var2 = 20;
+if (var2 > var1) {
+  var1 = 20;
+}
+console.log(var1);
 
 
 
@@ -48,6 +57,9 @@ Do the following:
    HINT: look up the Number method
 */
 
+let var1c = "1999";
+Number (var1c);
+console.log(var1c);
 
 
 
