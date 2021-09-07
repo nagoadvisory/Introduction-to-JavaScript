@@ -72,6 +72,7 @@ Do the following:
 function multiply(a,b){
   return a*b;
 }
+
 console.log(multiply(5,5));
 
 
@@ -85,10 +86,11 @@ Do the following:
  3. Return the newly calculated age
 */
 
-function dogYears(){
-  /*add your code here*/
+function dogYears(humanyears){
+  return humanyears * 7;
 }
 
+console.log(dogYears(9));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -118,9 +120,38 @@ Puppies less than 1 year
 NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-  /*add your code here*/
+function hungryDog(age,weight){
+  if (age >=1 && weight <= 5){
+    console.log('Adult Dog <5lbs')
+    return weight * .05;
+  }
+    else if (age >=1 && weight <= 10 && weight >= 6){
+      console.log('Adult Dog 6-10lbs')
+      return weight * .04;
+    }
+    else if (age >=1 && weight <=15 && weight >= 11){
+      console.log('Adult Dog 11-15lbs')
+      return weight * .03;
+    }
+    else if (age >=1 && weight > 15){
+      console.log('Adult Dog 15+lbs')
+      return weight * .02;
+    }
+      else if (age =>.1666667 && age <.333333){
+        console.log('Puppy 2-4months')
+        return weight * .10;
+      }
+      else if (age =>.333333 && age <.583333){
+        console.log('Puppy 4-7months')
+        return weight * .05;
+      }
+      else if (age =>.583333 && age < 1){
+        console.log('Puppy 7-12months')
+        return weight * .04;
+      }
 }
+console.log(hungryDog(1,15));
+
 
 
 
@@ -146,8 +177,53 @@ HINT: Remember that the order in which we pass in our arguments matters when it 
 */
 
 function game(user, computer){
-  /*add your code here*/
+  var computer = Math.random();
+  if (computer < .34) {
+    computer = "rock";
+  }
+    else if (computer <=.67) {
+      computer = "paper";
+    }
+    else if (computer > .67) {
+      computer = "scissors";
+    }
+
+  if (user === "paper") {
+    if (computer === "rock"){
+      return "you win!";
+    }
+      else if (computer === "scissors"){
+        return "you lose!";
+      }
+      else if (computer === "paper"){
+        return "it's a tie";
+      }
+    }
+    if (user ==="scissors"){
+      if (computer === "rock"){
+        return "you lose!!";
+      }
+        else if (computer === "scissors"){
+          return "it's a tie!";
+        }
+        else if (computer === "paper"){
+          return "you win!";
+        }
+    }
+    if (user ==="rock"){
+      if (computer === "rock"){
+        return "it's a tie";
+      }
+        else if (computer === "scissors"){
+          return "you win!";
+        }
+        else if (computer === "paper"){
+          return "you lose!";
+        }
+  }
 }
+
+console.log(game("paper"));
 
 
 
@@ -162,9 +238,11 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-  /*add your code here*/
+function miles(kilometers) {
+  return kilometers * .621371 +" miles";
 }
+
+console.log(miles(1));
 
 
 
@@ -176,9 +254,12 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-  /*add your code here*/
+function feet(CM){
+  const CM2FT = .0328084;
+  return CM * CM2FT +" feet";
 }
+
+console.log(feet(100));
 
 
 
@@ -212,9 +293,25 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */){
-/*Your Code here */
+function grade(score) {
+  if (score >=90){
+    return 'you got an A'
+  }
+    else if (score >= 80 && score <90){
+      return 'you got a B'
+    }
+    else if (score >= 70 && score <80){
+      return 'you got a C'
+    }
+    else if (score >= 60 && score <70){
+      return 'you got a D'
+    }
+    else if (score <60){
+      return 'you got a F'
+    }
 }
+
+console.log(grade(69));
 
 
 
