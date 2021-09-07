@@ -23,7 +23,7 @@ Do the following:
 */
 let votingAge = 18;
 if (votingAge >=18) {
-  console.log(true);
+  console.log("true");
 }
 
 /*
@@ -74,9 +74,8 @@ Do the following:
 
 function multiply(a,b){
   return a*b;
-  console.log(multiply(5,5));
 }
-
+console.log(multiply(5,5));
 
 
 
@@ -90,7 +89,7 @@ Do the following:
  3. Return the newly calculated age
 */
 
-function dogYears(humanyears){
+function dogYears(){
   let humanyears = 7;
   return humanyears * 7;
   console.log(dogYears());
