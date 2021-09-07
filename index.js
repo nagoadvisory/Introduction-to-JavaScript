@@ -292,11 +292,7 @@ function annoyingSong(Songstart){
           console.log("No bottles of sida on the wall.");
       }
   }
-
-  let ResultingNumber = Songstart - 1
-  let Song = " ${StartingNumber} bottles of soda on the wall, + ${StartingNumber} bottles of soda, take one down pass it around + ${ResultingNumber} + bottles of soda on the wall";
 }
-
 console.log(annoyingSong(99));
 
 
