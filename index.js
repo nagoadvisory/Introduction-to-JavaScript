@@ -20,9 +20,11 @@ Do the following:
    HINT: no function required
 */
 
-let votingAge = 18;
+const votingAge = 18;
 if (votingAge >=18){
-  console.log(true)
+  console.log(' task 1 a:',true);
+} else{
+  console.log(' task 1 a:',false);
 }
 
 /*
@@ -120,37 +122,34 @@ Puppies less than 1 year
 NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(age,weight){
+function hungryDog(weight,age){
   if (age >=1 && weight <= 5){
-    console.log('Adult Dog <5lbs')
     return weight * .05;
   }
-    else if (age >=1 && weight <= 10 && weight >= 6){
-      console.log('Adult Dog 6-10lbs')
-      return weight * .04;
+  else if (age >=1 && weight <= 10 && weight >= 6){
+    return weight * .04;
+  }
+  else if (age >=1 && weight <=15 && weight >= 11){
+    return weight * .03;
     }
-    else if (age >=1 && weight <=15 && weight >= 11){
-      console.log('Adult Dog 11-15lbs')
-      return weight * .03;
+  else if (age >=1 && weight > 15){
+    return weight * .02;
     }
-    else if (age >=1 && weight > 15){
-      console.log('Adult Dog 15+lbs')
-      return weight * .02;
-    }
-      else if (age =>.1666667 && age <.333333){
-        console.log('Puppy 2-4months')
+      else if (age =>.167 && age <.333){
         return weight * .10;
       }
-      else if (age =>.333333 && age <.583333){
-        console.log('Puppy 4-7months')
+      else if (age =>.333 && age <.5833){
         return weight * .05;
       }
-      else if (age =>.583333 && age < 1){
-        console.log('Puppy 7-12months')
+      else if (age =>.5833 && age < 1){
         return weight * .04;
       }
+      else {
+        return 'please try again';
+      }
 }
-console.log(hungryDog(1,15));
+
+console.log('task 3', hungryDog(1,15));
 
 
 
@@ -176,54 +175,32 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-function game(user, computer){
-  var computer = Math.random();
-  if (computer < .34) {
-    computer = "rock";
-  }
-    else if (computer <=.67) {
-      computer = "paper";
-    }
-    else if (computer > .67) {
-      computer = "scissors";
-    }
+let computer = Math.random();
 
-  if (user === "paper") {
-    if (computer === "rock"){
-      return "you win!";
-    }
-      else if (computer === "scissors"){
-        return "you lose!";
-      }
-      else if (computer === "paper"){
-        return "it's a tie";
-      }
-    }
-    if (user ==="scissors"){
-      if (computer === "rock"){
-        return "you lose!!";
-      }
-        else if (computer === "scissors"){
-          return "it's a tie!";
-        }
-        else if (computer === "paper"){
-          return "you win!";
-        }
-    }
-    if (user ==="rock"){
-      if (computer === "rock"){
-        return "it's a tie";
-      }
-        else if (computer === "scissors"){
-          return "you win!";
-        }
-        else if (computer === "paper"){
-          return "you lose!";
-        }
+if (computer <= 0.34){
+  computer = 'rock';
+} else if (computer <= .67){
+  computer = "paper";
+} else if (computer > .67){
+  computer = "scissors";
+}
+
+function game(user, computer){
+  if (user === computer){
+    return "it's a tie"
+  } else if (user==='rock' && computer === 'scissors'){
+    return 'you win!';
+  } else if (user==='paper' && computer === 'rock'){
+    return 'you win!';
+  }else if (user==='scissors' && computer === 'paper'){
+    return 'you win!';
+  }else {
+    return 'you lose!';
   }
 }
 
-console.log(game("paper"));
+console.log('task 4',game('paper',computer));
+
 
 
 
@@ -239,10 +216,10 @@ Using the miles function below do the following:
 */
 
 function miles(kilometers) {
-  return kilometers * .621371 +" miles";
+  return kilometers * .621371;
 }
 
-console.log(miles(1));
+console.log('task 5a', miles(2));
 
 
 
@@ -255,11 +232,11 @@ Using the feet function below do the following:
 */
 
 function feet(CM){
-  const CM2FT = .0328084;
-  return CM * CM2FT +" feet";
+  const FT2CM = 1/30.48;
+  return CM * FT2CM;
 }
 
-console.log(feet(100));
+console.log('task 5b', feet(160));
 
 
 
@@ -273,27 +250,33 @@ Using the annoyingSong function below do the following:
     "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(Songstart){
-  var bottles;
-  for (Songstart = 99; Songstart >=1; Songstart = Songstart - 1) {
-      if (Songstart === 1) {
-        bottles = 'bottle'
-      } else {
-        bottles = "bottles"
-      }
-      console.log(Songstart+" "+bottles+" of soda on the wall,");
-      if (Songstart < 99) {
-        console.log("");
-        console.log(Songstart+" "+bottles+" of soda on the wall,");
-      }
-      console.log(Songstart+" "+bottles+" of soda.");
-      console.log("take one down, pass it around");
-      if (Songstart == 1) {
-          console.log("No bottles of sida on the wall.");
-      }
+function annoyingSong(number){
+  for (let i = number; i > 0; i --) {
+    return '${i} bottles of soda on the wall, ${i} bottles of FontFaceSetLoadEvent, take one down pass it around ${i -1} bottles of soda on the wall';    
   }
 }
-console.log(annoyingSong(99));
+
+console.log('task 6',annoyingSong(8));
+
+
+//       if (Songstart === 1) {
+//         bottles = 'bottle'
+//       } else {
+//         bottles = "bottles"
+//       }
+//       console.log(Songstart+" "+bottles+" of soda on the wall,");
+//       if (Songstart < 99) {
+//         console.log("");
+//         console.log(Songstart+" "+bottles+" of soda on the wall,");
+//       }
+//       console.log(Songstart+" "+bottles+" of soda.");
+//       console.log("take one down, pass it around");
+//       if (Songstart == 1) {
+//           console.log("No bottles of sida on the wall.");
+//       }
+//   }
+// }
+// console.log(annoyingSong(99));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -308,7 +291,7 @@ Using the grade function below do the following:
  80-89 should return 'you got a B'
  70-79 should return 'you got a C'
  60-69 should return 'you got a D'
- below should return 'you got an F'
+ below should return 'you got a F'
 */
 
 function grade(score) {
@@ -325,7 +308,7 @@ function grade(score) {
       return 'you got a D'
     }
     else if (score <60){
-      return 'you got a F'
+      return 'you got an F'
     }
 }
 
